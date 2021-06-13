@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display:flex;
+    justify-content: space-between;
+    /* background-image: url("/MyToDoList/images/3.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Nanum Pen Script', cursive;
+    color:white;
+    overflow: hidden;
+}
+
+.randomImage{
+    width:100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/* div 박스 하나로 뒤에 음영 처리하기 (가상요소는 JS 동적 처리 불가능)*/
+
+.bgfillter{
+    background-color: rgba(0, 0, 0, 0.64);
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width:100%;
+    height: 100%;
+} 
+
+/* 날씨 */
+.jsWeather {
+    display:flex;
+    align-items: center;
+    position: absolute;
+    right:-102%;
+    top:1%;
+    font-size: 22px;
+    transition: all 1.2s ease-out;
+}
+
+/* 추후에 첫 화면 로딩했을 때 설정 */
+
+
+/* 첫 화면에서 이름 입력 */
+
+.showing{
+    width:250px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(204, 220, 227, 0.12) 0px 2px 4px 0px, rgba(204, 220, 227, 0.32) 0px 2px 16px 0px;
+     /* 첫 화면 로딩했을 때 설정 */
+}
+
+/* 이름 입력하는 <input> 태그 색깔 및 크기 지정 */
+
+#enter{
+    all: unset;
+    color: white;
+    text-align: center;
+    width:100%;
+    height: 100%;
+    font-size: 32px;
+}
+
+#enter::placeholder,
+#writeList::placeholder {
+    color:white;
+    font-size: 32px;
+}
+
+/* HTML 구조를 좌 (인사, 시간) , 중간 (이름입력) 우(할일목록) 으로 나눔 */
+
+header,
+main,
+.middle {
+    width: 30%;
+    height: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* 좌우 UI */
+
+.clockSection,
+.listSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    position: relative;
+    transition: all 1.2s ease-in-out;
+}
+.clockSection{
+    left: -100%;
+}
+.listSection{
+    right: -100%;
+}
+
+/* 좌우 UI 안 li, span */
+
+.leftContent,
+.rightContent {
+    background-color: rgba(7, 8, 9, 0.9);
+    width: 80%;
+    box-shadow: rgba(204, 220, 227, 0.12) 0px 2px 4px 0px, rgba(204, 220, 227, 0.32) 0px 2px 16px 0px;
+    border-radius: 10px;
+}
+
+.leftContent {
+    height: 25%;
+}
+
+.rightContent {
+    height: 35%;
+}
+
+.rightContent:first-child {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+}
+
+/* 할일 목록 */
+
+.toDoList,
+.fnToDoList {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.toDoList > li,
+.fnToDoList > li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toDoList > li > span,
+.fnToDoList > li > span {
+    font-size: 25px;
+    margin: 15px -15px 0 25px;
+    max-width: 80%;
+    word-break: keep-all;
+}
+
+.toDoList > li > div > button,
+.fnToDoList > li > div > button {
+    all: unset;
+    margin: 15px 15px 0 0;
+    font-size: 20px;
+}
+
+/* 할일 <input> */
+#writeList {
+    all: unset;
+    width: 400px;
+    height: 100%;
+    text-align: center;
+    font-size: 26px;
+}
+
+/* 인사 부분 */
+
+.jsGreeting {
+    display:flex;
+    justify-content: space-between;
+}
+
+.jsGreeting > h1 {
+    margin: 20px 10px 0 20px;
+    height: 20%;
+    font-size: 28px;
+    word-break: break-all;
+}
+
+#changeName {
+    height: 20%;
+    margin: 20px 20px 0 0;
+}
+#changeName > button {
+    all: unset;
+    display: block;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 25px 0 0 ;
+    text-align: center;
+}
+
+/* 시계 부분 */
+
+.jsClock > h2{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    margin: 15px auto;
+    letter-spacing: 6px;
+}
+
+/* 명언 */
+.famousWrite {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(204, 220, 227, 0.12) 0px 2px 4px 0px, rgba(204, 220, 227, 0.32) 0px 2px 16px 0px;
+    transition: all 2s ease-out;
+}
+
+.jsUpdate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    color:black;
+}
+
+.errorhandle{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
