@@ -46,7 +46,7 @@ const paintGreeting = (text) => {
     leftUl.style.left = "0%";
     rightUl.style.right = "0%";
     famous.style.bottom = "6%";
-    weatherBox.style.right = "2%";
+    weatherBox.style.right = "3%";
     // 입력한 이후에 인삿말과 이름 출력 
     h1.innerText = `안녕하세요. 
     
