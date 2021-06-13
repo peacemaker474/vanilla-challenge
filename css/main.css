@@ -65,6 +65,7 @@ aside,
     width: 80%;
     box-shadow: rgba(204, 220, 227, 0.12) 0px 2px 4px 0px, rgba(204, 220, 227, 0.32) 0px 2px 16px 0px;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .leftContent {
