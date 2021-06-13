@@ -13,9 +13,9 @@
 
 .toDoList > li > span,
 .fnToDoList > li > span {
-    font-size: 25px;
+    font-size: 17px;
     margin: 15px -15px 0 25px;
-    max-width: 80%;
+    max-width: 70%;
     word-break: keep-all;
 }
 
@@ -32,5 +32,5 @@
     all: unset;
     width: 400px;
     text-align: center;
-    font-size: 26px;
+    font-size: 22px;
 }

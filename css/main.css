@@ -5,6 +5,13 @@
 @import url("./kakaoMap.css");
 @import url("./ToDoList.css");
 
+@font-face {
+    font-family: 'Godo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+  }
+
 *{
     padding: 0;
     margin: 0;
@@ -15,7 +22,8 @@ body{
     height: 100vh;
     display:flex;
     justify-content: space-between;
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Godo', sans-serif;
+
     color:white;
     overflow: hidden;
 }
@@ -79,9 +87,10 @@ aside,
 
 .jsClock > h2{
     text-align: center;
-    font-size: 40px;
-    margin: 15px auto;
+    font-size: 32px;
+    margin: 25px auto;
     letter-spacing: 3px;
+    line-height: 50px;
 }
 
 /* 명언 */
@@ -92,7 +101,7 @@ aside,
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
-    font-size: 26px;
+    font-size: 20px;
     border: 1px solid white;
     padding: 5px;
     border-radius: 5px;
