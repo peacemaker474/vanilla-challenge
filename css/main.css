@@ -10,7 +10,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
-  }
+}
 
 *{
     padding: 0;
@@ -31,6 +31,7 @@ body{
 /* HTML 구조를 좌 (인사, 시간) , 중간 (이름입력) 우(할일목록) 으로 나눔 */
 
 aside,
+main,
 .middle {
     width: 30%;
     height: 100%;
