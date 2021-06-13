@@ -1,6 +1,6 @@
 const clock = document.querySelector(".jsClock"),
-    h2 = clock.querySelector("h2"),
-    h3 = clock.querySelector("h3");
+    h2 = clock.querySelector("h2");
+    // h3 = clock.querySelector("h3"); // 추후 D-Day 계산기
 
 const calendar = document.querySelector("#dDay");
 
@@ -12,10 +12,11 @@ const getTime = () => {
     const nowMinutes = nowTime.getMinutes();
     const nowSeconds = nowTime.getSeconds();
 
-    h2.innerText = `현재 시간은 ${
-        String(nowHours).padStart(2, 0)} : ${
-        String(nowMinutes).padStart(2, 0)} : ${
-        String(nowSeconds).padStart(2, 0)}`;
+    h2.innerText = `현재 시간은 
+    ${
+        String(nowHours).padStart(2, 0)}시 ${
+        String(nowMinutes).padStart(2, 0)}분 ${
+        String(nowSeconds).padStart(2, 0)}초`;
 };
 
 const showNowTime = () => {

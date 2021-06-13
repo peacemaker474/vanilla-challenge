@@ -1,0 +1,36 @@
+/* 할일 목록 */
+
+.toDoList,
+.fnToDoList {
+    margin: 10px 0;
+}
+
+.toDoList > li,
+.fnToDoList > li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toDoList > li > span,
+.fnToDoList > li > span {
+    font-size: 25px;
+    margin: 15px -15px 0 25px;
+    max-width: 80%;
+    word-break: keep-all;
+}
+
+.toDoList > li > div > button,
+.fnToDoList > li > div > button {
+    all: unset;
+    margin: 15px 15px 0 0;
+    font-size: 20px;
+}
+
+/* 할일 입력 */
+
+#writeList {
+    all: unset;
+    width: 400px;
+    text-align: center;
+    font-size: 26px;
+}

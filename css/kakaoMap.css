@@ -1,0 +1,22 @@
+/* 카카오 지도 */
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    color:black;
+}
+
+/* 카카오 지도 API Error handling */
+
+.errorhandle{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}

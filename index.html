@@ -4,20 +4,26 @@
         <meta chareset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/main.css" />
-        <title> What's your plan for today? </title>
+        <title> 오늘의 계획은? </title>
         <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bd495e6b667ceaa5698efad6cc3ed2c2"></script>
-
+        <script defer src="js/greeting.js"></script>
+        <script defer src="js/clock.js"></script>
+        <script defer src="js/toDo.js"></script>
+        <script defer src="js/famous.js"></script>
+        <script defer src="js/bg.js"></script>
+        <script defer src="js/weather.js"></script>
+        <script defer src="js/kakaoMap.js"></script>
     </head>
     <body>
-    <div class="bgfillter">
-        <nav class="jsWeather">
-            <span class="weatherText"></span>
-        </nav>
-    </div>
-    <header>
-        <article class="clockSection">
-            <!-- 인사 및 환영-->
+    <!-- 날씨 및 현재 기온 -->
+    <nav class="jsWeather">
+        <span class="weatherText"></span>
+    </nav>
+    <!-- 좌측 인사 및 환영, 시계, 카카오맵 부분 -->
+    <aside>
+        <article class="leftSection">
             <div class="leftContent">
+            <!-- 인사 및 이름 -->
                 <div class="jsGreeting">
                     <h1></h1>
                     <!-- 페이지를 리로드하여 초기 화면으로 감 -->
@@ -25,36 +31,39 @@
                         <button> 이름 바꾸기 </button> 
                     </form>
                 </div>
-                <div class="jsClock">
-                    <h2> 00:00 </h2>
-                </div>
             </div>
             <!-- 현재 시간 -->
             <div class="leftContent">
-                <!-- D-Day 계산 
+                <div class="jsClock">
+                    <h2> 00:00 </h2>
+                </div>
+                <!-- D-Day 계산 (추가 예정)
                 <input id="dDay" type="date" />
                 <h3></h3>
                 -->
             </div>
-            <!-- 추후의 기능 개발 예정 -->
-            <div class="leftContent jsUpdate">
-                <div id="map">
-                    <span class="errorhandle">카카오 지도를 받아올 수 없습니다.</span>
+            <!-- 카카오 지도  -->
+            <div class="leftContent kakaoMap">
+                <div id="map"> <!-- 지도 -->
+                        <!-- 지도 오류 시 문구 -->
+                    <span class="errorhandle"> 카카오 지도를 받아올 수 없습니다. </span>
                 </div>
             </div>
         </article>
-    </header>
+    </aside>
+    <!-- 중간 처음 로딩 페이지 (이름 입력)-->
     <article class="middle">
         <div class="enterName">
             <form id="inputName">
                 <input id="enter" type="text" placeholder="이름을 입력해주세요." autocomplete="off" />
             </form>
         </div>
-        <h3 class="famousWrite"></h3> <!-- 명언 -->
+        <!-- 명언 -->
+        <h3 class="famousWrite"></h3>
     </article>
-    <main>
-    <!--여기는 toDoList 만들기 -->
-        <article class="listSection">
+    <aside>
+    <!-- 우측 할일 입력 및 목록 -->
+        <section class="rightSection">
         <!-- 할일 작성하는 곳 -->
             <div class="rightContent jstoDoList">
                 <form id="inputToDo">
@@ -69,15 +78,8 @@
             <div class="rightContent finishList">
                 <ul class="fnToDoList">
             </div>
-        </article>
-    </main>
-        <script src="js/greeting.js"></script>
-        <script src="js/clock.js"></script>
-        <script src="js/toDo.js"></script>
-        <script src="js/famous.js"></script>
-        <script src="js/bg.js"></script>
-        <script src="js/weather.js"></script>
-        <script src="js/kakaoMap.js"></script>
+        </section>
+    </aside>
     </body>
 
 </html>

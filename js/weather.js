@@ -42,7 +42,7 @@ const handleGeoError = () => {
 const handleGeoSuccess = (position) => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const coordsObj = {
+    const coordsObj = { // 로컬 스토리지에 저장하기 위해 OBject로 저장
         latitude,
         longitude
     };
@@ -55,6 +55,7 @@ function askLocationInfo () {
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 
+// 로컬 스토리지에 위치정보 저장 후 조건문으로 출력 //
 function loadLocation () {
     const loadedLocation = localStorage.getItem(MYLOCATION);
     if(loadedLocation === null) {

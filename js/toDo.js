@@ -58,7 +58,7 @@ const saveLocalDate = () => {
 
 const paintFinish = (text, id) => {
     const li = document.createElement("li");
-    const buttonBox = document.createElement("div");
+    const buttonBox = document.createElement("div"); // 버튼과 텍스트 부분을 양옆으로 하기 위해 div 생성
     const deleteBtn = document.createElement("button");
     const returnBtn = document.createElement("button");
     const span = document.createElement("span");
