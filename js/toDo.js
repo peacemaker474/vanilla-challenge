@@ -115,6 +115,11 @@ const paintNow = (text, id = Date.now()) => {
 const handleSubmitList = (event) => {
     event.preventDefault();
     const currentValue = writeList.value;
+    // 공백을 입력헀을시, 다시 입력할 수 있게끔 수정하였습니다.
+    if (currentValue === "") {
+        alert("아무 것도 입력하지 않으셨어요! 다시 입력하세요!");
+        return;
+    }
     paintNow(currentValue);
     // submit 했을 때, 할일 목록에 text 값으로 input.value를 넘겨줌
     writeList.value = "";
@@ -135,7 +140,7 @@ const loadedDate = () => {
     }
 };
 
-function showToDoList () {
+function showToDoList() {
     loadedDate();
     form.addEventListener("submit", handleSubmitList);
 }
